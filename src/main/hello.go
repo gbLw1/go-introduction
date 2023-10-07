@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	u "gointro/src/usuario"
+	p "gointro/src/person"
 	// "strconv"
 )
 
@@ -14,7 +14,7 @@ func main() {
 
 	checkAge(age)
 
-	user := u.Person{
+	user := p.Person{
 		Name: name,
 		Age:  age,
 	}
@@ -66,7 +66,7 @@ func checkAge(age int) {
 	}
 }
 
-func printUsuario(user u.Person) {
+func printUsuario(user p.Person) {
 	fmt.Println()
 	fmt.Println("User: {")
 	fmt.Printf("  Name: %s\n", coalesce(user.Name, "Anonymous"))
