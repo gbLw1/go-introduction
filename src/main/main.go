@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	p "gointro/src/person"
+	m "gointro/src/models" // alias for 'models'
+	"gointro/src/utils"
 	// "strconv"
 )
 
@@ -12,9 +13,9 @@ func main() {
 	name := askName()
 	age := askAge()
 
-	checkAge(age)
+	utils.CheckAge(age)
 
-	user := p.Person{
+	user := m.Person{
 		Name: name,
 		Age:  age,
 	}
@@ -22,14 +23,6 @@ func main() {
 	printUsuario(user)
 
 	loopTest()
-}
-
-func coalesce(str, defaultValue string) string {
-	if str == "" {
-		return defaultValue
-	}
-
-	return str
 }
 
 func askName() string {
@@ -56,20 +49,10 @@ func askAge() int {
 	return age
 }
 
-func checkAge(age int) {
-	fmt.Println()
-
-	if age > 0 && age < 18 {
-		fmt.Println("You are not old enough.")
-	} else if age >= 18 {
-		fmt.Println("You are old enough.")
-	}
-}
-
-func printUsuario(user p.Person) {
+func printUsuario(user m.Person) {
 	fmt.Println()
 	fmt.Println("User: {")
-	fmt.Printf("  Name: %s\n", coalesce(user.Name, "Anonymous"))
+	fmt.Printf("  Name: %s\n", utils.Coalesce(user.Name, "Anonymous"))
 	fmt.Printf("  Age: %d\n", user.Age)
 	fmt.Println("}")
 }
