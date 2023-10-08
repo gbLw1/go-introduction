@@ -20,9 +20,9 @@ func main() {
 		Age:  age,
 	}
 
-	printUsuario(user)
+	m.PrintPerson(user)
 
-	loopTest()
+	// loopTest()
 }
 
 func askName() string {
@@ -47,14 +47,6 @@ func askAge() int {
 	}
 
 	return age
-}
-
-func printUsuario(user m.Person) {
-	fmt.Println()
-	fmt.Println("User: {")
-	fmt.Printf("  Name: %s\n", utils.Coalesce(user.Name, "Anonymous"))
-	fmt.Printf("  Age: %d\n", user.Age)
-	fmt.Println("}")
 }
 
 func loopTest() {

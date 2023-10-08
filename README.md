@@ -2,4 +2,6 @@
 
 ## Running the app
 
-```go run .\src\main\hello.go```
+go to the `main` or `pointers` directory and run the command
+
+```go run .```
