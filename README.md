@@ -4,4 +4,6 @@
 
 go to the `main` or `pointers` directory and run the command
 
-```go run .```
+```sh
+go run .
+```
